@@ -60,13 +60,18 @@ def decrypt(password, directory="."):
                 print("wrote "+outname)
 
 def decrypt_widget():
+    import time
     from jp_gene_viz import js_proxy
     js_proxy.load_javascript_support()
+    # wait for the js to compile...
+    time.sleep(0.5)
     from IPython.display import display
     d = js_proxy.ProxyWidget()
     elt = d.element()
+    #display(d)
     window = d.window()
     jQuery = window.jQuery
+    d(elt.width("400px").height("100px"))
     d(elt.html("""<input type="password" id="pw000"/> <input id="b000" type="button" value="decrypt files"/> """))
     def click_handler(id, args):
         password = d.evaluate(jQuery("#pw000").val())
