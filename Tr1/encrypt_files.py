@@ -22,9 +22,7 @@ def get_encoder(password):
 
 def encrypt(password, directory=".", delete=False):
     for filename in os.listdir(directory):
-        if os.path.isdir(filename):
-            continue # skip directories
-        doit = True
+        doit = os.path.isfile(filename)
         for suffix in dont_encrypt:
             if filename.endswith(suffix):
                 doit = False
