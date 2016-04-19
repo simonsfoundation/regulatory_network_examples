@@ -7,7 +7,7 @@ If you see a notebook named `decrypt files using password.ipynb` in a folder
 then before running other notebooks in the folder open `decrypt files using password.ipynb`
 and follow the instructions in the notebook to decrypt data files.
 
-Once all data has been encrypted most networks can be displayed by openning
+Once all data has been decrypted most networks can be displayed by opening
 the other notebooks and then selecting `Cell --> Run All` in the Jupyter menu.
 
 Click below to launch a binder container instance for this repository
@@ -36,7 +36,7 @@ for permission).
 - Verify that you have write access to the repository by 
     - adding your initials to the bottom of this file in the cloned repository,
     - `git add README.md`
-    - `git commit -m "testing that I can push a commit"
+    - `git commit -m "testing that I can push a commit"`
     - `git push`
     - if that sequence works, congrats, you have write access.
     - if not, go back to the top and fix the problem.
