@@ -97,7 +97,7 @@ than that) then create a repository similar to this one.
     - `git add requirements.txt`
     - `git commit -m "add requirements"`
     - `git push`
-- Then procede as described above to add a folder to your new repository.
+- Then proceed as described above to add a folder to your new repository.
 
 
 
