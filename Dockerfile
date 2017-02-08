@@ -1,4 +1,4 @@
-FROM andrewosh/binder-base
+FROM andrewosh/binder-python-2.7
 
 MAINTAINER Aaron Watters <awatters@simonsfoundation.org>
 
