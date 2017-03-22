@@ -61,6 +61,7 @@ def decrypt(password, directory="."):
 
 def decrypt_widget():
     import time
+    import threading
     from jp_gene_viz import js_proxy
     js_proxy.load_javascript_support()
     # wait for the js to compile...
@@ -74,7 +75,15 @@ def decrypt_widget():
     d(elt.width("400px").height("100px"))
     d(elt.html("""<input type="password" id="pw000"/> <input id="b000" type="button" value="decrypt files"/> """))
     def click_handler(id, args):
-        password = d.evaluate(jQuery("#pw000").val())
+        print "click"
+        t = threading.Timer(0.1, extract)
+        t.start()
+    def extract():
+        print "extracting password..."
+        print d.send(jQuery("#pw000").val(), pw_callback)
+    def pw_callback(arg):
+        print "... password extracted"
+        password = arg[0]
         # print("pw="+repr(password))
         decrypt(password)
     callback = d.callback(click_handler, None)
