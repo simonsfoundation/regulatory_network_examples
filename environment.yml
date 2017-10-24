@@ -2,4 +2,6 @@
 channels:
   - conda-forge
 dependencies:
+  - python=2
   - ipywidgets
+  - scikit-learn
